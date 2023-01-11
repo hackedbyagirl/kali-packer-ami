@@ -1,1 +1,1 @@
-"# kali-packer-ami" 
+# kali-packer-ami
