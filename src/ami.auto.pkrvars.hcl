@@ -14,4 +14,4 @@ ami_name = "Kali-Packer-Test"
 
 // Run Configuration
 inst_type  = "t2.medium"
-source_ami = "ami-06e9ed0799116d0dd"
+source_ami = "ami-08e895caaf450b4f9"
