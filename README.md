@@ -22,6 +22,7 @@
 - [About](#about)
 - [Getting Started](#getting_started)
 - [Usage](#usage)
+- [Deployment](#deploy)
 - [Built Using](#built_using)
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
@@ -89,9 +90,12 @@ packer validate .
 # Build
 packer build .
 ```
-
+***Important:** Note down the AMI-ID as this will be used for provisioning and deployment using terraform*
 > Bug: You may get an error the first time you run this and it says you need to accept terms and conditions. Navigate to the link it provides. 
 > I am still Trying to figure this out on the backend
+
+## Deployment <a name = "deploy"></a>
+Comming Soon
 
 ## Built Using <a name = "built_using"></a>
 - `Packer` - Image Builder
