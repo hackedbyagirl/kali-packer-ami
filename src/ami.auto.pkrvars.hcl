@@ -4,3 +4,14 @@
 // is where the AMI build variables will be stored. File is not needed to be passed
 // at the command line.
 
+// Access Configuration
+aws_region = "us-west-1"
+
+// AMI Configuration
+ami_name = "Kali-Packer-Test"
+//ami_desc = "Kali AMI Test"
+//ami_tag  = ''
+
+// Run Configuration
+inst_type  = "t2.medium"
+source_ami = "ami-06e9ed0799116d0dd"
