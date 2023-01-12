@@ -44,11 +44,54 @@ These instructions will get you a copy of the project up and running for develop
 2. [AWS CLI](https://aws.amazon.com/cli/)
 3. AWS Account - [Create AWS Account](https://www.aws.amazon.com/free)
 
-### Setup
-TBD
-
 ## Usage <a name="usage"></a>
-Coming soon
+Clone the repository
+```bash
+git clone https://github.com/hackedbyagirl/kali-packer-ami.git
+```
+
+Before building the image, it is important that you have the correct environmental variables set. 
+
+Linux or MacOS
+```bash
+# Packer Variables
+export PKR_VAR_aws_access_key=<YOUR_ACCESSKEY>
+export PKR_VAR_aws_secret_key=<YOUR_SECRETKEY>
+
+# AWS CLI Integration
+export AWS_ACCESS_KEY_ID=<YOUR_ACCESSKEY>
+export AWS_SECRET_ACCESS_KEY=<YOUR_SECRETKEY>
+export AWS_DEFAULT_REGION=<region>
+```
+
+Windows
+
+```bash 
+# AWS CLI Integration
+setx AWS_ACCESS_KEY_ID <AKIAIOSFODNN7EXAMPLE>
+setx AWS_SECRET_ACCESS_KEY <wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY>
+setx AWS_DEFAULT_REGION us-west-1
+
+# Packer Variable
+setx PKR_VAR_aws_access_key YOURKEY
+setx PKR_VAR_aws_secret_key YOURKEY
+```
+
+Initialize the packer repository and validate the source code
+```bash
+# Navigate to repository source code
+cd kali-packer-ami/src
+
+# Initialize and validate
+packer init .
+packer validate .
+
+# Build
+packer build .
+```
+
+> Bug: You may get an error the first time you run this and it says you need to accept terms and conditions. Navigate to the link it provides. 
+> I am still Trying to figure this out on the backend
 
 ## Built Using <a name = "built_using"></a>
 - `Packer` - Image Builder
