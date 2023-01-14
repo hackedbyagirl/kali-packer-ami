@@ -1,0 +1,10 @@
+---
+- hosts: all
+  name: Setup Base Configuration
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: apt tasks 
+      become: True
+      ansible.builtin.import_tasks: apt.yml
+  
