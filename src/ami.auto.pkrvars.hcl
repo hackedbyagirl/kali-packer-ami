@@ -8,7 +8,7 @@
 aws_region = "us-west-1"
 
 // AMI Configuration
-ami_name = "Kali-Packer-Test"
+ami_name = "Kali-Packer-Provision"
 //ami_desc = "Kali AMI Test"
 //ami_tag  = ''
 
