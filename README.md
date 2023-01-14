@@ -7,7 +7,7 @@
 
 <div align="center">
 
-  [![Status](https://img.shields.io/badge/status-in%20development-yellowgreen)](https://github.com/hackedbyagirl/kali-packer-ami) 
+  [![Status](https://img.shields.io/badge/status-Active-brightgreen)](https://github.com/hackedbyagirl/kali-packer-ami) 
   [![GitHub Issues](https://img.shields.io/github/issues/hackedbyagirl/kali-packer-ami)](https://github.com/hackedbyagirl/kali-packer-ami/issues)
   
 </div>
