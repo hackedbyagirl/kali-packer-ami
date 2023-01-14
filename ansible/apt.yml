@@ -21,10 +21,7 @@
     - docker.io
     - docker-compose
     - dnsutils
-    - eyewitness
-    - ffuf
     - gem
-    - gobuster
     - golang
     - jq
     - libffi-dev
@@ -41,12 +38,11 @@
     - libwacom-common
     - libkrb5-dev
     - llvm
-    - msfpc
-    - mimikatz
     - ncat
     - nbtscan-unixwiz
     - neo4j
     - npm
+    - openvpn
     - parallel
     - python3-setuptools
     - python3-openssl
