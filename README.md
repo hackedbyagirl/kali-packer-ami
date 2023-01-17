@@ -95,7 +95,9 @@ packer build .
 > I am still Trying to figure this out on the backend
 
 ## Deployment <a name = "deploy"></a>
-Comming Soon
+Sit back, relax, and enjoy because this can take awhile :-)
+
+*Note: can be used in conjunction with https://github.com/hackedbyagirl/Eris*
 
 ## Built Using <a name = "built_using"></a>
 - `Packer` - Image Builder
