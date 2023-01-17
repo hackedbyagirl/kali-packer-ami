@@ -48,7 +48,10 @@
     - python3-openssl
     - python3-pip
     - python3-venv
+    - tightvncserver
     - tk-dev
+    - xfce4
+    - xfce4-goodies
     - xz-utils
     - zlib1g-dev
     - zsh
