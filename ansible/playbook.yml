@@ -11,4 +11,12 @@
     - name: install pip
       become: True
       ansible.builtin.import_tasks: pip.yml
+      
+    - name: Configure Environmental Settings
+      become: true
+      ansible.builtin.import_tasks: env.yml
+
+    - name: Download Binaries
+      become: True
+      ansible.builtin.import_tasks: binaries.yml  
   
