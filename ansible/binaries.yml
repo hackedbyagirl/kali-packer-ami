@@ -11,3 +11,4 @@
     dest: /usr/bin
     remote_src: yes
     mode: 0755
+    
