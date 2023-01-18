@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="https://github.com/hackedbyagirl/kali-packer-ami/blob/main/imgs/kali.png" alt="Kali AMI Project logo"></a>
+ <img width=400px height=400px src="https://github.com/hackedbyagirl/kali-packer-ami/blob/main/imgs/kali.png" alt="Kali AMI Project logo"></a>
 </p>
 
 <h3 align="center">Kali Packer AMI</h3>
