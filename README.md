@@ -77,6 +77,10 @@ setx AWS_DEFAULT_REGION us-west-1
 setx PKR_VAR_aws_access_key YOURKEY
 setx PKR_VAR_aws_secret_key YOURKEY
 ```
+Edit the following cloud-init configuration file:
+```bash
+vim data/defaults.cfg
+```
 
 Initialize the packer repository and validate the source code
 ```bash
