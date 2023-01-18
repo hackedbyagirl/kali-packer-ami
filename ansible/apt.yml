@@ -22,7 +22,6 @@
     - docker-compose
     - dnsutils
     - gem
-    - golang
     - jq
     - libffi-dev
     - libpcap-dev
@@ -50,6 +49,7 @@
     - python3-venv
     - tightvncserver
     - tk-dev
+    - vim
     - xfce4
     - xfce4-goodies
     - xz-utils
