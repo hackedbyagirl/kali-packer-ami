@@ -1,1 +1,68 @@
 ---
+git_repos:
+  - {path: "/opt/recon-tools", dir_name: "checkpwnedemails", repo: "https://github.com/Techno-Hwizrdry/checkpwnedemails.git"}
+  - {path: "/opt/recon-tools", dir_name: "google-dork-scan", repo: "https://github.com/IvanGlinkin/Fast-Google-Dorks-Scan.git"}
+  - {path: "/opt/recon-tools", dir_name: "github-search", repo: "https://github.com/gwen001/github-search.git"}
+  - {path: "/opt/recon-tools", dir_name: "o365spray", repo: "https://github.com/hackedbyagirl/o365spray.git"}
+  - {path: "/opt/recon-tools", dir_name: "DumpsterDiver", repo: "https://github.com/securing/DumpsterDiver.git"}
+  - {path: "/opt/recon-tools", dir_name: "gitGraber", repo: "https://github.com/hisxo/gitGraber.git"}
+  - {path: "/opt/recon-tools", dir_name: "changeme", repo: "https://github.com/ztgrace/changeme"}
+  - {path: "/opt/recon-tools", dir_name: "defaultcredsearch", repo: "https://github.com/ihebski/DefaultCreds-cheat-sheet.git"}
+  - {path: "/opt/recon-tools", dir_name: "hash-identifier", repo: "https://github.com/HashPals/Name-That-Hash.git"}
+  - {path: "/opt/recon-tools", dir_name: "spiderfoot", repo: "https://github.com/smicallef/spiderfoot.git"} 
+  - {path: "/opt/recon-tools", dir_name: "knockpy", repo: "https://github.com/guelfoweb/knock.git"}
+  - {path: "/opt/recon-tools", dir_name: "censys-subdomain-finder", repo: "https://github.com/christophetd/censys-subdomain-finder.git"}
+  - {path: "/opt/recon-tools", dir_name: "msdorkdump", repo: "https://github.com/dievus/msdorkdump.git"}
+  - {path: "/opt/recon-tools", dir_name: "Turbolist3r", repo: "https://github.com/fleetcaptain/Turbolist3r.git"}
+
+  - {path: "/opt/web-tools", dir_name: "CMSmap", repo: "https://github.com/dionach/CMSmap.git"}
+  - {path: "/opt/web-tools", dir_name: "dirsearch", repo: "https://github.com/maurosoria/dirsearch.git"}
+  - {path: "/opt/web-tools", dir_name: "JSscanner", repo: "https://github.com/dark-warlord14/JSScanner.git"}
+  - {path: "/opt/web-tools", dir_name: "jwt_tool", repo: "https://github.com/ticarpi/jwt_tool.git"}
+  - {path: "/opt/web-tools", dir_name: "SleuthQL", repo: "https://github.com/RhinoSecurityLabs/SleuthQL.git"}    
+
+  - {path: "/opt/network-tools", dir_name: "nlzr", repo: "https://github.com/noahpowers/nlzr.git"}
+  - {path: "/opt/network-tools", dir_name: "Pentest-Scripts", repo: "https://github.com/averagesecurityguy/scripts.git"}
+  - {path: "/opt/network-tools", dir_name: "bloodhound", repo: "https://github.com/fox-it/BloodHound.py.git"} 
+  - {path: "/opt/network-tools", dir_name: "certi", repo: "https://github.com/zer1t0/certi.git"}
+  - {path: "/opt/network-tools", dir_name: "certipy", repo: "https://github.com/ly4k/Certipy.git"}
+  - {path: "/opt/network-tools", dir_name: "PCredz", repo: "https://github.com/lgandx/PCredz.git"}
+  - {path: "/opt/network-tools", dir_name: "Pentest-Scripts", repo: "https://github.com/averagesecurityguy/scripts.git"}
+  - {path: "/opt/network-tools", dir_name: "PetitPotam", repo: "https://github.com/topotam/PetitPotam.git"}
+  - {path: "/opt/network-tools", dir_name: "PKINITtools", repo: "https://github.com/dirkjanm/PKINITtools"}
+  - {path: "/opt/network-tools", dir_name: "pywhisker", repo: "https://github.com/ShutdownRepo/pywhisker.git"}
+  - {path: "/opt/network-tools", dir_name: "impacket", repo: "https://github.com/SecureAuthCorp/impacket.git"}
+  - {path: "/opt/network-tools", dir_name: "pyWhat-pcap", repo: "https://github.com/bee-san/pyWhat.git"}
+
+  - {path: "/opt/web-tools", dir_name: "Goblyn", repo: "https://github.com/loseys/Goblyn.git"}
+  - {path: "/opt/web-tools", dir_name: "VHostScan", repo: "VHostScan https://github.com/codingo/VHostScan.git"}
+  - {path: "/opt/web-tools", dir_name: "BlackWidow", repo: "https://github.com/1N3/BlackWidow.git"}
+
+- name: Install tools from github and set permissions
+  block:
+  - name: Create a directory for each tool to be installed
+    ansible.builtin.file:
+      mode: 0755
+      path: "{{ item.path }}/{{ item.dir_name }}"
+      state: directory
+    loop: "{{ git_repos }}"
+    loop_control:
+      label: "{{ item.dir_name }}"
+
+- name: Install github tools
+    ansible.builtin.git:
+      repo: "{{ item.repo }}"
+      dest: "{{ item.path }}/{{ item.dir_name }}"
+      force: true
+    loop: "{{ git_repos }}"
+    loop_control:
+      label: "{{item.repo}}"
+
+  - name: Set new file privileges -- recursive
+    ansible.builtin.file:
+      path: "{{ item.path }}/{{ item.dir_name }}"
+      mode: 0755
+      recurse: yes
+    loop: "{{git_repos}}"
+    loop_control:
+      label: "{{item.repo}}"
