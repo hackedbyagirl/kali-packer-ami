@@ -22,6 +22,7 @@
     - docker-compose
     - dnsutils
     - gem
+    - golang
     - jq
     - libffi-dev
     - libpcap-dev
