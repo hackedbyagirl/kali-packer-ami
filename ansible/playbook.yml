@@ -18,5 +18,9 @@
 
     - name: Download Binaries
       become: True
-      ansible.builtin.import_tasks: binaries.yml  
+      ansible.builtin.import_tasks: binaries.yml
+      
+    - name: install go tools
+      become: True
+      ansible.builtin.import_tasks: golang.yml
   
