@@ -49,7 +49,7 @@ git_repos:
     loop_control:
       label: "{{ item.dir_name }}"
 
-- name: Install github tools
+  - name: Install github tools
     ansible.builtin.git:
       repo: "{{ item.repo }}"
       dest: "{{ item.path }}/{{ item.dir_name }}"
